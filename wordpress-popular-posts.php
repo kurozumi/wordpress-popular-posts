@@ -1678,6 +1678,8 @@ if ( !class_exists('WordpressPopularPosts') ) {
 
 			// Build query
 			$query = "SELECT {$fields} FROM {$from} {$where} {$groupby} {$orderby} {$limit};";
+			
+			$query = apply_filters( 'wpp_query', $query, $fields, $from, $where, $groupby, $orderby, $limit);
 
 			$this->__debug( $query );
 
